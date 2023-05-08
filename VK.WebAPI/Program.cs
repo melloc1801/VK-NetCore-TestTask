@@ -1,3 +1,4 @@
+using VK.Application;
 using VK.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureApplication();
 builder.Services.ConfigureInfrastructure();
 
 var app = builder.Build();
