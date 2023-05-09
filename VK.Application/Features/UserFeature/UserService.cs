@@ -21,7 +21,6 @@ public class UserService: IUserService
         {
             throw new BadRequestException("Admin already exists");
         }
-
         var createUserDto = new CreateUserDto(
             createUserRequestBodyDto.Login, 
             createUserRequestBodyDto.Password, 

@@ -65,7 +65,7 @@ public class UserRepository: IUserRepository
         user.UserState = blockedState;
         _context.SaveChanges();
     }
-
+    
     public async Task<User?> GetAdmin()
     {
         return await _context.Users.FirstOrDefaultAsync(u => u.UserGroup.Code == "Admin");
