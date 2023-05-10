@@ -8,4 +8,5 @@ public interface IStateRepository
     Task<int> Create(CreateStateDto createStateDto);
     Task<UserState[]> GetAll();
     Task<UserState?> GetOneByCode(string code);
+    Task<UserState?> FindOneById(int id);
 }

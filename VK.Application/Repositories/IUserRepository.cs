@@ -8,6 +8,6 @@ public interface IUserRepository
     Task<int> Create(CreateUserDto createUserDto);
     Task<User?> GetUserById(int id);
     Task<User[]> GetAllUsers();
-    Task DeleteUser(int id);
+    Task DeleteUser(int id, UserState blockedState);
     Task<User?> GetAdmin();
 }
