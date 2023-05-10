@@ -30,6 +30,14 @@ public class DataContext: DbContext
         optionsBuilder.UseNpgsql(connectionString);
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasIndex(user => user.Login).IsUnique();
+        });
+    }
+
     public DbSet<User> Users { get; set; }
     public DbSet<UserGroup> UserGroups { get; set; }
     public DbSet<UserState> UserStates { get; set; }

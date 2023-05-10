@@ -64,4 +64,9 @@ public class UserRepository: IUserRepository
     {
         return await _context.Users.FirstOrDefaultAsync(u => u.UserGroup.Code == "Admin");
     }
+
+    public async Task<User?> FindByLogin(string login)
+    {
+        return await _context.Users.FirstOrDefaultAsync(u => u.Login == login);
+    }
 }

@@ -9,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureApplication();
 builder.Services.ConfigureInfrastructure();
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 
