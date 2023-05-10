@@ -10,4 +10,5 @@ public interface IUserRepository
     Task<User[]> GetAllUsers();
     Task DeleteUser(int id, UserState blockedState);
     Task<User?> GetAdmin();
+    Task<User?> FindByLogin(string login);
 }
