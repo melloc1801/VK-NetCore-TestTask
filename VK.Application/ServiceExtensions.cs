@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using VK.Application.Features.GroupFeature;
+using VK.Application.Features.StateFeature;
 using VK.Application.Features.UserFeature;
 
 namespace VK.Application;
@@ -10,5 +11,6 @@ public static class ServiceExtensions
     {
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IGroupService, GroupService>();
+        services.AddScoped<IStateService, StateService>();
     }
 }

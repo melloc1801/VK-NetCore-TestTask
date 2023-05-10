@@ -12,5 +12,6 @@ public static class ServiceExtensions
         services.AddDbContext<DataContext>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IGroupRepository, GroupRepository>();
+        services.AddScoped<IStateRepository, StateRepository>();
     }
 }
