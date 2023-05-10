@@ -52,15 +52,9 @@ public class UserRepository: IUserRepository
         return res;
     }
 
-    public async Task DeleteUser(int id)
+    public async Task DeleteUser(int id, UserState blockedState)
     {
-        var blockedState = _context.UserStates.FirstOrDefault(s => s.Id == 2);
         var user = _context.Users.FirstOrDefault(u => u.Id == id);
-        
-        if (blockedState == null || user == null)
-        {
-            return;
-        }
 
         user.UserState = blockedState;
         _context.SaveChanges();

@@ -35,4 +35,9 @@ public class StateRepository: IStateRepository
     {
         return await _dataContext.UserStates.FirstOrDefaultAsync(state => state.Code == code);
     }
+
+    public async Task<UserState?> FindOneById(int id)
+    {
+        return await _dataContext.UserStates.FirstOrDefaultAsync(state => state.Id == id);
+    }
 }

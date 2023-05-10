@@ -8,4 +8,5 @@ public interface IGroupRepository
     Task<int> Create(CreateGroupDto createGroupDto);
     Task<UserGroup[]> GetAll();
     Task<UserGroup?> GetOneByCode(string code);
+    Task<UserGroup?> FindOneById(int id);
 }

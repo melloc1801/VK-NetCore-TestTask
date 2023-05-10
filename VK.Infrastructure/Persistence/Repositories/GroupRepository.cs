@@ -36,4 +36,9 @@ public class GroupRepository: IGroupRepository
     {
         return await _context.UserGroups.FirstOrDefaultAsync(group => group.Code == code);
     }
+
+    public async Task<UserGroup?> FindOneById(int id)
+    {
+        return await _context.UserGroups.FirstOrDefaultAsync(group => group.Id == id);
+    }
 }
